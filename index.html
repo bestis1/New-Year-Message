@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026 | Premium Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #FFD700;
+            --gradient-gold: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --deep-purple: #0f0c29;
+            --mid-purple: #302b63;
+            --light-purple: #24243e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: radial-gradient(circle at center, #1a103c 0%, #000000 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- Animations & Effects --- */
+        .background-fx {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: floatOrb 10s infinite alternate;
+        }
+
+        @keyframes floatOrb { 
+            0% { transform: translate(0, 0); } 
+            100% { transform: translate(30px, 50px); } 
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #dcdcdc;
+            letter-spacing: 1px;
+        }
+
+        /* --- Main Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+            padding-bottom: 4rem;
+        }
+
+        /* --- Glass Cards --- */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 8px 40px 0 rgba(255, 215, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .section-title i { color: var(--primary-gold); margin-right: 10px; }
+
+        /* --- Countdown --- */
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 2rem;
+        }
+
+        .time-box {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .time-val {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .time-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aaa;
+        }
+
+        /* --- Form Elements --- */
+        .form-group { margin-bottom: 1.2rem; }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #ddd;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.1);
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-gold {
+            background: var(--gradient-gold);
+            color: #1a0b2e;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .action-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            flex: 1;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        /* --- Message Result --- */
+        .result-box {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px dashed rgba(255,215,0,0.3);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .generated-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #fff;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .generated-from {
+            font-size: 1rem;
+            color: var(--primary-gold);
+            font-style: italic;
+        }
+
+        /* --- Resolutions Grid --- */
+        .resolutions-wrapper {
+            grid-column: 1 / -1;
+            margin-top: 2rem;
+        }
+
+        .res-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .res-card {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .res-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+            border-color: var(--primary-gold);
+        }
+
+        .res-icon {
+            font-size: 1.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            background: #000;
+        }
+
+        /* --- Canvas Effects --- */
+        canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 1; }
+
+        /* --- Badge --- */
+        .year-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255,215,0,0.15);
+            color: var(--primary-gold);
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--primary-gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 3;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .glass-card { padding: 1.5rem; }
+            .countdown-grid { gap: 5px; }
+            .time-val { font-size: 1.8rem; }
+            .year-badge { top: 10px; left: 10px; font-size: 0.8rem; }
+            .res-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Background Elements -->
+    <div class="background-fx">
+        <div class="orb" style="top: 10%; left: 20%; width: 300px; height: 300px; background: #4b0082;"></div>
+        <div class="orb" style="bottom: 10%; right: 10%; width: 400px; height: 400px; background: #000080;"></div>
+        <canvas id="fireworksCanvas"></canvas>
+    </div>
+
+    <div class="year-badge"><i class="fas fa-sparkles"></i> 2026 Edition</div>
+
+    <header>
+        <h1>Happy New Year 2026</h1>
+        <div class="subtitle">Design your future, celebrate the moment</div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Countdown Card -->
+        <div class="glass-card">
+            <h2 class="section-title"><i class="far fa-clock"></i> The Final Countdown</h2>
+            <p style="text-align: center; color: #aaa;">Time remaining until 2026</p>
+            
+            <div class="countdown-grid">
+                <div class="time-box">
+                    <span class="time-val" id="d">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="h">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="m">00</span>
+                    <span class="time-label">Mins</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-val" id="s">00</span>
+                    <span class="time-label">Secs</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <i class="fas fa-glass-cheers" style="font-size: 3rem; color: rgba(255,255,255,0.1);"></i>
+            </div>
+        </div>
+
+        <!-- Generator Card -->
+        <div class="glass-card">
+            <h2 class="section-title"><i class="fas fa-magic"></i> Wish Generator</h2>
+            
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="userName" placeholder="e.g. John Doe" value="Alex">
+            </div>
+
+            <div class="form-group">
+                <label>Recipient (Optional)</label>
+                <input type="text" id="recipientName" placeholder="e.g. Family, Sarah, My Love">
+            </div>
+
+            <div class="form-group">
+                <label>Vibe / Tone</label>
+                <select id="msgTone">
+                    <option value="inspiring">✨ Inspiring & Motivational</option>
+                    <option value="funny">😂 Fun & Witty</option>
+                    <option value="romantic">❤️ Romantic & Sweet</option>
+                    <option value="professional">🤝 Professional & Corporate</option>
+                    <option value="emotional">🥺 Heartfelt & Emotional</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Your Goal for 2026 (Optional)</label>
+                <textarea id="userRes" rows="2" placeholder="e.g. Learn to code, Travel more..."></textarea>
+            </div>
+
+            <button class="btn btn-gold" onclick="generateWish()">
+                Generate Wish <i class="fas fa-wand-magic-sparkles"></i>
+            </button>
+
+            <!-- Result Display -->
+            <div id="resultArea" style="display: none;">
+                <div class="result-box" id="captureArea">
+                    <div class="generated-text" id="finalMsg"></div>
+                    <div class="generated-from" id="finalSign"></div>
+                </div>
+
+                <div class="action-row" id="actionButtons">
+                    <button class="btn btn-outline" onclick="shareWish()"><i class="fab fa-whatsapp"></i> Share</button>
+                    <button class="btn btn-outline" onclick="downloadWish()"><i class="fas fa-download"></i> Save</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resolutions Section -->
+        <div class="glass-card resolutions-wrapper">
+            <h2 class="section-title"><i class="fas fa-list-check"></i> Popular Resolutions</h2>
+            <div class="res-grid">
+                <div class="res-card" onclick="pickRes('Start a healthy lifestyle')">
+                    <div class="res-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h4>Get Healthy</h4>
+                </div>
+                <div class="res-card" onclick="pickRes('Learn a new digital skill')">
+                    <div class="res-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h4>Learn Skills</h4>
+                </div>
+                <div class="res-card" onclick="pickRes('Travel to 3 new places')">
+                    <div class="res-icon"><i class="fas fa-plane"></i></div>
+                    <h4>Travel More</h4>
+                </div>
+                <div class="res-card" onclick="pickRes('Save and invest money')">
+                    <div class="res-icon"><i class="fas fa-coins"></i></div>
+                    <h4>Save Money</h4>
+                </div>
+                <div class="res-card" onclick="pickRes('Read 24 books this year')">
+                    <div class="res-icon"><i class="fas fa-book"></i></div>
+                    <h4>Read More</h4>
+                </div>
+                <div class="res-card" onclick="pickRes('Start a side business')">
+                    <div class="res-icon"><i class="fas fa-briefcase"></i></div>
+                    <h4>Start Business</h4>
+                </div>
+                <div class="res-card" onclick="pickRes('Practice mindfulness daily')">
+                    <div class="res-icon"><i class="fas fa-brain"></i></div>
+                    <h4>Mindfulness</h4>
+                </div>
+                <div class="res-card" onclick="pickRes('Learn to play an instrument')">
+                    <div class="res-icon"><i class="fas fa-guitar"></i></div>
+                    <h4>Learn Music</h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 New Year Generator. Wishing you prosperity, health, and happiness in the coming year!</p>
+    </footer>
+
+    <script>
+        // --- Countdown Logic ---
+        const targetDate = new Date("Jan 1, 2026 00:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const dist = targetDate - now;
+
+            const days = Math.floor(dist / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((dist % (1000 * 60)) / 1000);
+
+            document.getElementById("d").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("h").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("m").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("s").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (dist < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector(".countdown-grid").innerHTML = 
+                    '<div style="grid-column: span 4; text-align: center; padding: 2rem;">' +
+                    '<h3 style="color: var(--primary-gold);">🎉 Happy New Year 2026! 🎉</h3>' +
+                    '<p>The celebration has begun!</p>' +
+                    '</div>';
+            }
+        }
+
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        // --- Generator Logic ---
+        const wishes = {
+            inspiring: [
+                "May 2026 be the year you conquer your fears and reach new heights! May every step forward be filled with courage and every achievement be a testament to your strength.",
+                "Here's to 2026: A fresh chapter waiting to be written with your success. May your dreams take flight and your aspirations become reality.",
+                "As the new year dawns, may you find the strength to pursue your passions and the wisdom to embrace every opportunity. 2026 is your year to shine!",
+                "May 2026 bring you clarity of purpose, unwavering determination, and victories that fill your heart with pride. The world is ready for your greatness!"
+            ],
+            funny: [
+                "Happy 2026! My resolution is to stop procrastinating... starting next week. Or maybe the week after. Definitely by February!",
+                "May your 2026 troubles last as long as your New Year's resolutions! Here's to another year of pretending we'll use that gym membership!",
+                "Cheers to 2026! May your coffee be strong, your Wi-Fi stronger, and your ability to remember what you walked into a room for slightly improved!",
+                "Welcome to 2026! Where we're all one year older but still Googling how to boil eggs. May your year be as amazing as your grandma thinks you are!"
+            ],
+            romantic: [
+                "Every year with you is my favorite year. Can't wait for 2026 together, creating more beautiful memories and sharing endless love.",
+                "To a 2026 filled with love, laughter, and endless cuddles. You're my favorite hello and my hardest goodbye, every single day.",
+                "As we welcome 2026, I'm grateful for every moment with you. Here's to another year of growing together, loving deeper, and building our forever.",
+                "May 2026 bring us more sunsets shared, more laughter echoed, and more love multiplied. With you, every year is a blessing."
+            ],
+            professional: [
+                "Wishing you a prosperous 2026 filled with innovation, professional growth, and groundbreaking achievements. May your career reach new pinnacles!",
+                "Happy New Year! May 2026 bring new opportunities, successful ventures, and the recognition you truly deserve in your professional journey.",
+                "Here's to a 2026 of strategic wins, collaborative successes, and professional milestones. May your expertise shine brighter than ever before!",
+                "May 2026 be your most productive year yet, filled with satisfying accomplishments, valuable connections, and career-defining moments."
+            ],
+            emotional: [
+                "As 2026 dawns, may you find peace, healing, and joy in the little things. May your heart be light and your spirit renewed.",
+                "Wishing you a year that feels like a warm hug and brings light to your soul. May 2026 be gentle with you and generous with happy moments.",
+                "May 2026 bring you the serenity to accept what you cannot change, the courage to change what you can, and the wisdom to know the difference.",
+                "Here's to a year of inner peace, self-discovery, and emotional growth. May 2026 help you find your center and embrace your authentic self."
+            ]
+        };
+
+        function pickRes(text) {
+            document.getElementById('userRes').value = text;
+            document.getElementById('userRes').focus();
+        }
+
+        function generateWish() {
+            const name = document.getElementById('userName').value || "A Friend";
+            const recipient = document.getElementById('recipientName').value;
+            const tone = document.getElementById('msgTone').value;
+            const res = document.getElementById('userRes').value;
+
+            if (!name.trim()) {
+                alert("Please enter your name first!");
+                document.getElementById('userName').focus();
+                return;
+            }
+
+            const randomMsg = wishes[tone][Math.floor(Math.random() * wishes[tone].length)];
+            
+            let fullMsg = "";
+            if (recipient.trim()) {
+                fullMsg += `<span style="color: var(--primary-gold);">To ${recipient},</span><br><br>`;
+            }
+            fullMsg += randomMsg;
+            if (res.trim()) {
+                fullMsg += `<br><br><i class="fas fa-bullseye" style="color: var(--primary-gold);"></i> <strong>My 2026 Goal:</strong> ${res}`;
+            }
+            
+            document.getElementById('finalMsg').innerHTML = fullMsg;
+            document.getElementById('finalSign').innerHTML = `~ With warm wishes, ${name}`;
+            
+            const resultArea = document.getElementById('resultArea');
+            resultArea.style.display = 'block';
+            
+            // Smooth scroll to result
+            resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            
+            // Trigger confetti effect
+            fireConfetti(30);
+            
+            // Show action buttons
+            document.getElementById('actionButtons').style.display = 'flex';
+        }
+
+        function shareWish() {
+            const text = document.getElementById('finalMsg').innerText + "\n\n" + document.getElementById('finalSign').innerText;
+            const url = `https://wa.me/?text=${encodeURIComponent("🎊 My New Year 2026 Wish 🎊\n\n" + text + "\n\nCreate your own: [YourWebsiteHere]")}`;
+            window.open(url, '_blank');
+        }
+
+        function downloadWish() {
+            const element = document.getElementById('captureArea');
+            const originalBG = element.style.background;
+            element.style.background = "linear-gradient(135deg, #0f0c29, #302b63, #24243e)";
+            
+            html2canvas(element, {
+                backgroundColor: null,
+                scale: 2,
+                useCORS: true
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `New-Year-2026-Wish-${Date.now()}.png`;
+                link.href = canvas.toDataURL('image/png', 1.0);
+                link.click();
+                element.style.background = originalBG;
+                
+                // Celebration effect
+                fireConfetti(100);
+            });
+        }
+
+        // --- Particle System (Fireworks/Confetti) ---
+        const canvas = document.getElementById('fireworksCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        const particleColors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 5 + 2;
+                this.speedX = Math.random() * 6 - 3;
+                this.speedY = Math.random() * 6 - 3;
+                this.color = particleColors[Math.floor(Math.random() * particleColors.length)];
+                this.life = 100;
+                this.gravity = 0.1;
+            }
+            
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                this.speedY += this.gravity;
+                this.life--;
+            }
+            
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.life / 100;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function fireConfetti(count = 50) {
+            const centerX = canvas.width / 2;
+            const centerY = 100;
+            
+            for(let i = 0; i < count; i++) {
+                particles.push(new Particle(centerX, centerY));
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for(let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                if(particles[i].life <= 0 || particles[i].y > canvas.height) {
+                    particles.splice(i, 1);
+                    i--;
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Auto fire some confetti on page load
+        setTimeout(() => fireConfetti(20), 1000);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Add some interactive sparkles to resolutions
+        document.querySelectorAll('.res-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'translateY(-5px)';
+                }, 150);
+                
+                // Add sparkle effect
+                const icon = this.querySelector('.res-icon');
+                icon.style.transform = 'scale(1.2)';
+                icon.style.transition = 'transform 0.3s';
+                setTimeout(() => {
+                    icon.style.transform = 'scale(1)';
+                }, 300);
+            });
+        });
+
+        // Initialize with a sample wish if name is filled
+        document.getElementById('userName').addEventListener('input', function() {
+            if(this.value.trim() && !document.getElementById('resultArea').style.display) {
+                setTimeout(() => {
+                    if(!document.getElementById('resultArea').style.display || 
+                       document.getElementById('resultArea').style.display === 'none') {
+                        document.querySelector('.btn-gold').style.animation = 'pulse 2s infinite';
+                    }
+                }, 1000);
+            }
+        });
+
+        // Add CSS animation for pulse effect
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+                70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
